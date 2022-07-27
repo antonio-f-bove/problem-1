@@ -4,3 +4,60 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.body {
+  background-color: #aaa;
+}
+
+.flex-row {
+  height: 100%;
+  display: flex;
+}
+
+.col-1of2 {
+  width: 50%;
+}
+
+.col-1of3 {
+  width: calc(100% / 3);
+}
+
+.cell {
+  background-color: teal;
+  border: 1px solid #aaa;
+}
+
+/* ----------------------- */
+
+main {
+  height: 100vh;
+
+  // #first, #second, #third {
+  //   height: 100%;
+  // }
+
+  #first-col {
+    .cell {
+      height: 20%;
+    }
+  }
+
+  #second-col {
+    .flex-row {
+      flex-wrap: wrap;
+      
+      .cell {
+        height: 100%;
+      }
+    }
+  }
+
+  #third-col {
+    .grid {
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(5, auto);
+      grid-template-rows: repeat(5, auto);
+    }
+  }
+}
