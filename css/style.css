@@ -25,8 +25,9 @@ main {
         flex-wrap: wrap; }
         main .main-row .main-col {
           width: 100%; } }
-  main #first-col .cell {
-    height: 20%; }
+  main #first-col {
+    display: flex;
+    flex-direction: column; }
   main #second-col .grid {
     height: 100%;
     display: grid;

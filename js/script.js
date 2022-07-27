@@ -43,7 +43,6 @@ function makeNewCell() {
 
 function assignCellRandomColour(cell) {
   cell.style.backgroundColor = getRandomHexColour()
-
 }
 
 function getRandomHexColour() {
