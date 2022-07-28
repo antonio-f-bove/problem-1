@@ -1,30 +1,31 @@
 const NUMBER_OF_CELLS_IN_THIRD_COL = 25
 const NUMBER_OF_CELLS_IN_MINI_GRID = 4
 
-// TODO non ho capito perché ho avuto bisogno di specificare di aspettare l'onload
-window.addEventListener('load', () => {
-  const grid = document.querySelector('#third-col .grid')
-  fillGrid(grid, NUMBER_OF_CELLS_IN_THIRD_COL)
 
-  const cells = document.querySelectorAll('.cell')
-  cells.forEach(cell => {
-    assignCellRandomColor(cell)
 
-    cell.addEventListener('click', (e) => {
-      const miniGrid = document.createElement('div')
-      miniGrid.className = 'grid-4x4'
-      fillGrid(miniGrid, NUMBER_OF_CELLS_IN_MINI_GRID)
+const grid = document.querySelector('#third-col .grid')
+fillGrid(grid, NUMBER_OF_CELLS_IN_THIRD_COL)
 
-      const newCells = miniGrid.children      
-      for (let i = 0; i < newCells.length; i++) {
-        assignCellRandomColor(newCells[i])
-      }
-      
-      e.target.append(miniGrid)
-      console.log(e.target)
-    })
+const cells = document.querySelectorAll('.cell')
+cells.forEach(cell => {
+  assignCellRandomColor(cell)
+
+  cell.addEventListener('click', (e) => {
+    const miniGrid = document.createElement('div')
+    miniGrid.className = 'grid-4x4'
+    fillGrid(miniGrid, NUMBER_OF_CELLS_IN_MINI_GRID)
+
+    const newCells = miniGrid.children      
+    for (let i = 0; i < newCells.length; i++) {
+      assignCellRandomColor(newCells[i])
+    }
+    
+    e.target.append(miniGrid)
+    console.log(e.target)
   })
 })
+
+
 
 
 function fillGrid(grid, numberOfCells) {
