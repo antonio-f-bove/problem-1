@@ -8,7 +8,7 @@ window.addEventListener('load', () => {
 
   const cells = document.querySelectorAll('.cell')
   cells.forEach(cell => {
-    assignCellRandomColour(cell)
+    assignCellRandomColor(cell)
 
     cell.addEventListener('click', (e) => {
       const miniGrid = document.createElement('div')
@@ -17,7 +17,7 @@ window.addEventListener('load', () => {
 
       const newCells = miniGrid.children      
       for (let i = 0; i < newCells.length; i++) {
-        assignCellRandomColour(newCells[i])
+        assignCellRandomColor(newCells[i])
       }
       
       e.target.append(miniGrid)
@@ -41,17 +41,17 @@ function makeNewCell() {
   return cell
 }
 
-function assignCellRandomColour(cell) {
-  cell.style.backgroundColor = getRandomHexColour()
+function assignCellRandomColor(cell) {
+  cell.style.backgroundColor = getRandomHexColor()
 }
 
-function getRandomHexColour() {
-  let hexColour = '#'
+function getRandomHexColor() {
+  let hexColor = '#'
   for (let i = 0; i < 6; i++) {
-    hexColour += getRandomHexCharacter()
+    hexColor += getRandomHexCharacter()
   }
 
-  return hexColour
+  return hexColor
 }
 
 function getRandomHexCharacter() {
